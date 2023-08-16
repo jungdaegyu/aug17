@@ -15,5 +15,10 @@ public class JoinService {
 		
 	}
 	
+	public int checkID(String mid) {
+		
+		return joinDAO.checkID(mid);
+	}
+	
 	
 }

@@ -15,4 +15,11 @@ public class JoinDAO {
 		return sqlSession.insert("join.join", joinDTO);
 	}
 
+	public int checkID(String mid) {
+		
+		return sqlSession.selectOne("join.checkID", mid);
+		
+	}
+	
+	
 }

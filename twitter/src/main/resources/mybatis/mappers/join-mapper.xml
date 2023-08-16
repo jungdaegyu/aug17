@@ -5,8 +5,14 @@
 <mapper namespace="join">
 
 <insert id="join" parameterType="JoinDTO">
-		INSERT INTO member(mid, mpw, mname)
-		VALUES (#{mid}, #{mpw}, #{mname})
+		INSERT INTO member(mid, mpw, mname, mpn)
+		VALUES (#{mid}, #{mpw}, #{mname}, #{mpn})
 
 </insert>
+
+<select id="checkID" parameterType="String" resultType="Integer"> <!--들어오는건 스트링 나갈땐 int-->
+		SELECT COUNT(*) FROM member WHERE member.mid =#{mid}
+</select>
+
+
 </mapper>
