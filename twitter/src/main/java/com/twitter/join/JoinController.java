@@ -29,6 +29,7 @@ public class JoinController {
 		System.out.println(joinDTO.getMid());
 		System.out.println(joinDTO.getMpw());
 		System.out.println(joinDTO.getMpn());
+		System.out.println(joinDTO.getTnick());
 		System.out.println(res);
 		if (res == 1) {
 			return "redirect:/";

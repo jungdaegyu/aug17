@@ -6,8 +6,11 @@
 <head>
 <meta charset="UTF-8">
 <title>회원가입</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<link rel="stylesheet" href="./css/join.css">
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 <script type="text/javascript">
+
 // jQuery 코드 작성
 $(function(){
 	$("#resultForm").hide();
@@ -46,6 +49,7 @@ $(function(){
 		let mpw = $("#mpw").val();
 		let mpn = $("#mpn").val();
 		let mname = $("#mname").val();
+		let tnick = $("#tnick").val();
 		if (mid == "" || mid.length < 5) {
 			alert("아이디 중복 검사를 실행하세요.");
 			return false;
@@ -62,6 +66,10 @@ $(function(){
 			alert("핸드폰 번호 11자리를 정확히 입력해주세요.");
 			return false;
 		}
+		if (tnick.length < 3) {
+			alert("닉네임은 3자 이상입니다.");
+			return false;
+		}
 	
 	});
 	
@@ -72,7 +80,6 @@ $(function(){
 </script>
 
 </head>
-
 
 <body>
 <div style="text-align:center;">
@@ -86,11 +93,9 @@ $(function(){
 			<div class="label-in">
 				<input type="text" name="mid" id="mid" placeholder="아이디를 입력하세요.">
 				<br>
-				<button id="idCheck">중복검사</button>
+				<button class="btn btn-secondary" id="idCheck">중복검사</button>
 				<br>
-				<span id="resultMSG"></span>
-			
-				
+				<span id="resultMSG"></span>			
 			</div>
 		</div>
 			<div class="label-row" id="resultForm">
@@ -120,12 +125,19 @@ $(function(){
 			<input type="text" name="mpn" id="mpn" placeholder="핸드폰 번호를 입력하세요.">
 			</div>
 		</div>
+		<br>
+		<div class="label-row">
+			<div class="label-name">닉네임</div>
+			<div class="label-in">
+			<input type="text" name="tnick" id="tnick" placeholder="닉네임을 입력하세요.">
+			</div>
+		</div>
 		
-	
 		<hr>
 		<div class="label-row lrbtn">
-			<button type="reset">취소</button>
-			<button type="submit" id="joinjoin">가입하기</button>
+			<button type="reset" class="btn btn-secondary">취소</button>
+			<button type="submit" class="btn btn-primary" id="joinjoin">가입하기</button>
+			
 		</div>
 		</form>
 

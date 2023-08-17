@@ -3,7 +3,7 @@ package com.twitter.join;
 public class JoinDTO {
 private int mno;
 private long mpn;
-private String mid, mpw, mname;
+private String mid, mpw, mname, tnick;
 
 public int getMno() {
 	return mno;
@@ -43,6 +43,14 @@ public long getMpn() {
 
 public void setMpn(long mpn) {
 	this.mpn = mpn;
+}
+
+public String getTnick() {
+	return tnick;
+}
+
+public void setTnick(String tnick) {
+	this.tnick = tnick;
 }
 
 
